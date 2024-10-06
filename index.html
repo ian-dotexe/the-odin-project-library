@@ -9,7 +9,13 @@
 <body>
     <h1>My Library</h1>
     <div id="book-list"></div> <!-- Container for book information -->
-
-    <script src="src/js/script.js"></script>
+        <script src="src/js/script.js"></script> <!-- Loads class definitions -->
+        <script>
+            // This script runs after the DOM is fully loaded
+            const myLibrary = new Library();
+            const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+            
+            myLibrary.addBookToLibrary(theHobbit); // Updates the display
+        </script>
 </body>
 </html>
