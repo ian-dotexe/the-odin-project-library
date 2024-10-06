@@ -13,9 +13,34 @@
         <script>
             // This script runs after the DOM is fully loaded
             const myLibrary = new Library();
-            const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-            
-            myLibrary.addBookToLibrary(theHobbit); // Updates the display
+
+            // Array of book data
+            const booksData = [
+                { title: "The Hobbit", author: "J.R.R. Tolkien", numPages: 295, read: false },
+                { title: "The Hobbit", author: "J.R.R. Tolkien", numPages: 295, read: false },
+                { title: "The Hobbit", author: "J.R.R. Tolkien", numPages: 255, read: true },
+                { title: "The Hobbit", author: "J.R.R. Tolkien", numPages: 295, read: false }
+            ];
+
+            // Loop through the array and add each book to the library
+            booksData.forEach(book => {
+                const newBook = new Book(book.title, book.author, book.numPages, book.read);
+                myLibrary.addBookToLibrary(newBook); // Updates the display
+        });
         </script>
+
+    <table id="book-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+            </tr>
+        </thead>
+        <tbody id="book-table-body">
+            <!-- Book rows will be dynamically inserted here -->
+        </tbody>
+    </table>
 </body>
 </html>

@@ -16,6 +16,11 @@ class Library {
         const bookListDiv = document.getElementById("book-list");
         bookListDiv.innerHTML = this.listBooks(); // Update the inner HTML of the div
     }
+
+    renderBooksInTable(){
+        const bookTableBody = document.getElementById("book-table-body");
+        bookTableBody.innerHTML = this.listBooks();
+    }
 } 
 
 
