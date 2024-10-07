@@ -21,7 +21,6 @@ document.getElementById('addBookBtn').addEventListener('click', () => {
     dataForm.style.display = 'block'; // Show the form
 });
 
-
 document.getElementById('dataForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
     // When a form is submitted, the default action is to send the form data to the server and reload the page. 
@@ -43,3 +42,13 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     // Close the form after submission
     dataForm.style.display = 'none';
 });
+
+
+// SHOULDN'T BE A FOR LOOP, SHOULD BE OPEN ALL THE TIME 
+myLibrary.books.forEach((book, index) => {
+    document.getElementById(`read-btn-${index}`).addEventListener('click', () => {
+    book.read = true; 
+    myLibrary.renderBooks();
+    myLibrary.renderBooksInTable();
+});
+})

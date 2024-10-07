@@ -13,6 +13,10 @@ export class Book {
         const readStatus = this.read ? "read" : "not read yet";
         return `${this.title} by ${this.author}, ${this.numPages} pages, ${readStatus}`;  // return une chaîne de caractères formatée !! C'est bien une string.
     }
+
+    hasBeenRead() {
+        this.read = true;
+    }
 }
 
 // Class for managing a library of books
@@ -48,13 +52,15 @@ export class Library {
         bookTableBody.innerHTML = '';
         
         // Loop through the library's books and create table rows
-        this.books.forEach(book => {
+        this.books.forEach((book, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${book.title}</td>
                 <td>${book.author}</td>
                 <td>${book.numPages}</td>
                 <td>${book.read ? 'Yes' : 'No'}</td>
+                <td><button id='read-btn-${index}'>Read</button></td>
+                <td><button id='delete-btn-${index}'>Delete</button></td>
             `;
             // Append the new row to the tbody
         bookTableBody.appendChild(row);
