@@ -25,7 +25,7 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const numPages = document.getElementById('numPages').value;
-    const isRead = document.getElementById('isRead').value;
+    const isRead = document.getElementById('isRead').checked;
 
     const newBook = new Book(title, author, numPages, isRead); // Transformation de chaque objet de la liste d'objet booksData en une instance de Book.
     myLibrary.addBookToLibrary(newBook); // Ajout à la librairie
