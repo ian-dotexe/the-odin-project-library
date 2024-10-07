@@ -17,9 +17,17 @@ booksData.forEach(bookData => {
     myLibrary.addBookToLibrary(newBook); // Ajout à la librairie
 });
 
+document.getElementById('addBookBtn').addEventListener('click', () => {
+    dataForm.style.display = 'block'; // Show the form
+});
+
 
 document.getElementById('dataForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
+    // When a form is submitted, the default action is to send the form data to the server and reload the page. 
+    // Using event.preventDefault() allows you to prevent this behavior, which is useful when you want to handle the form submission with JavaScript (e.g., validating input or sending data via AJAX).
+    // You will most likely encounter an issue where submitting your form will not do what you expect it to do. 
+    // That’s because the submit input tries to send the data to a server by default. This is where event.preventDefault(); will come in handy. 
 
     // Get form values
     const title = document.getElementById('title').value;
@@ -32,4 +40,6 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
 
     // Clear the form fields
     document.getElementById('dataForm').reset();
+    // Close the form after submission
+    dataForm.style.display = 'none';
 });
