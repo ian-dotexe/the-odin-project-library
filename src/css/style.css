@@ -3,5 +3,5 @@
 }
 
 #dataForm {
-    display: none;
+    display: none; /* Cache le formulaire d'ajout de livre par défaut, tant qu'on ne clique pas sur 'Add New Book' */
 }
