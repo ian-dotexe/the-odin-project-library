@@ -1,18 +1,3 @@
-table {
-    width: 100%;                /* Makes the table take the full width of its container */
-    border-collapse: collapse;  /* Removes space between borders */
-    margin: 20px 0;            /* Adds margin above and below the table */
-}
-
-/* Target table headers */
-th {
-    background-color: #4CAF50; /* Green background for headers */
-    color: white;              /* White text color for headers */
-    padding: 10px;             /* Padding for table headers */
-}
-
-/* Target table data cells */
-td {
-    border: 1px solid #ddd;    /* Light grey border for cells */
-    padding: 8px;              /* Padding for table data cells */
+#book-list {
+    color: rgb(180, 19, 19);
 }
